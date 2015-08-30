@@ -65,7 +65,7 @@ router.get('/make', basicAuth(authenticate), function (req, res, next) {
 
 function validate(params) {
   try {
-    if (params.toptext && params.bottomtext && params.img && params.toptext.length < 100 && params.bottomtext.length < 100)
+    if (params.img && params.toptext.length < 100 && params.bottomtext.length < 100)
       return {
         toptext : params.toptext,
         bottomtext : params.bottomtext,
