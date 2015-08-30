@@ -7,7 +7,19 @@ html(lang='en')
     block css
       link(rel='stylesheet', href='/css/style.css')
     block js
+      script(src='/components/jquery/dist/jquery.min.js')
+      script(src='/js/actions.js')
       if ENV_DEVELOPMENT
         script(src='http://localhost:35729/livereload.js')
   body
     block content
+  footer
+    .box
+      a(href="/?page=#{parseInt(page)-1}") Go back    
+    .box
+      p This is page #{page}
+    .box
+      a(href="/?page=#{parseInt(page)+1}") Next page
+    .details
+      p This site was made by me, Jon King, and features silly pictures hewn from the erratic genius that comes out of my flatmate's mouth. This site is not hosted on Tumblr or anything, I made it using Node, Express and MongoDB. If you want to make your own version, fork it here: 
+        a(href="https://github.com/JonathanUsername") https://github.com/JonathanUsername

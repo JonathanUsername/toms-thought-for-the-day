@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  .scroller
+    h1 Thought Generator
+    div.viewer
+    form.generator
+      textarea#toptext(placeholder="Top", name="toptext")
+      textarea#bottomtext(placeholder="Bottom", name="bottomtext")
+      input#img(placeholder="Image URL", name="img")        
+      a.preview Preview
+      a.go(type="submit", value="Submit") Create
+    div.oldies
+      h2 Old posts
+      each thought in thoughts
+        div.info(id="del:#{thought.id}")
+          div.thought
+            h3= thought.date
+            .param Top text: 
+              p #{thought.toptext}
+            .param Bottom text: 
+              p #{thought.bottomtext}
+            .param Img url: 
+              p #{thought.img}
+            a.del Delete?
+
+
+

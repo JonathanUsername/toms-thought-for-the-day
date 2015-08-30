@@ -1,5 +1,18 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .scroller
+    h1= title
+    p A far-from-daily journey through the erratic power drill that is Tom's mind.
+    if warning
+      div.warning #{warning}
+    div.thoughts
+      each thought in thoughts
+        div.thought
+          h3= thought.date
+          div.meme
+            .text.top
+              span= thought.toptext
+            .text.bottom
+              span= thought.bottomtext
+            img(src=thought.img)
