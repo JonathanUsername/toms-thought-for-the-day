@@ -23,7 +23,6 @@ router.get('/', function (req, res, next) {
       skip = THOUGHTS_PER_PAGE * (page - 1),
       limit = THOUGHTS_PER_PAGE,
       warning;
-  console.log("HTGJNDGNJD", page, skip, limit)
   Thought.find().sort('-_id').skip(skip).limit(limit).find(function (err, thoughts) {
     if (err) return next(err);
     if (thoughts.length == 0)
