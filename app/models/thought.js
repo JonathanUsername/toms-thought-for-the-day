@@ -11,11 +11,9 @@ var ThoughtSchema = new Schema({
 
 ThoughtSchema.virtual('date')
   .get(function(){
-    var isodate = this._id.getTimestamp()
-    console.log("Date", isodate)
-    var date = new Date(isodate).toGMTString().slice(0,-13)
-    console.log(date)
-    return date;
+    var isodate = this._id.getTimestamp();
+    var date = new Date(isodate).toGMTString().slice(0,-13);
+    return date
   });
 
 ThoughtSchema.virtual('id')
