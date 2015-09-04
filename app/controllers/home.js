@@ -46,9 +46,7 @@ router.get('/admin', basicAuth(authenticate), function (req, res, next) {
 });
 
 router.get('/delete', basicAuth(authenticate), function (req, res, next) {
-  if (!req.query.id){
-    res.send('No query id.')
-  } else {
+  if (req.query.id){
     Thought.remove({ _id:req.query.id }, function (err) {
       if (err) return handleError(err);
       res.send('Deleted.');

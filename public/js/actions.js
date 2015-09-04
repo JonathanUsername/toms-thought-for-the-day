@@ -3,7 +3,7 @@ $(function(){
 		if (confirm('Are you sure?')){
 			var info = $(this).parents(".info"),
 				id = info.attr("id").split(":")[1];
-			$.get('/delete?id' + id, function(data){
+			$.get('/delete?id=' + id, function(data){
 				if (!data.err){
 					info.css("display", "none")
 				} else {
